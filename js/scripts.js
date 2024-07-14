@@ -10,8 +10,22 @@ form.addEventListener('submit', function(event){
     const inputAge = document.getElementById('inputage').value;
     console.log(inputAge);
 
+    const passenger = document.getElementById('inputname').value
+
+
     let price = (inputKm * 0.21);
     console.log(price);
+
+    let random1_100 = (Math.random() * 100) + 1;
+    random1_100 = Math.floor(random1_100)
+    console.log ('il num random 1-100 è: ',random1_100); // numero biglietto casuale
+
+    let random1_20 = (Math.random() * 20) + 1;
+    random1_20 = Math.floor(random1_20)
+    console.log ('il num random 1-20 è: ',random1_20); // numero carrozza casuale
+
+    const ticket = document.getElementById('ticket');
+    ticket.classList.remove('d-none')
 
     if (inputAge < 18){
         let discount = ((inputKm * 0.21) * 20 / 100);
@@ -25,8 +39,11 @@ form.addEventListener('submit', function(event){
         console.log('Il prezzo scontato per i superiori di 65 anni è:',price);
     }
 
-    // if (price < 10){ // il prezzo non scende sotto gli €10
-    //     price = (10).toFixed(2);
-    // }
-    document.getElementById('finalprice').innerHTML = price.toFixed(2);
+    if (price < 5){ // il prezzo non scende sotto i 5 euro
+        price = (5);
+    }
+    document.getElementById('number1-20').innerHTML = random1_20;
+    document.getElementById('number1-100').innerHTML = random1_100;
+    document.getElementById('finalprice').innerHTML = (price).toFixed(2);
+    document.getElementById('passenger').innerHTML = passenger;
 });

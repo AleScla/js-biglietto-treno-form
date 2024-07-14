@@ -10,33 +10,81 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <header>
+            <div class="container">
+                <h1>
+                    TicketTrain
+                </h1>
+            </div>
+        </header>
         <div class="container">
-            <h1>Le ferrovie più scrause d'Italia</h1>
+            
+            <div class="card w-75">
+                <div class="card-header">
+                    Un'anteprima del prezzo del tuo biglietto in completa autonomia!
+                </div>
+                <div class="card-body w-100">
+                    <form id="form" class="mb-3 w-75 mx-auto">
+                        <div class="mb-3 w-75 mx-auto">
+                            <label for="name-surname" class="form-label">
+                                Inserisci nome e cognome
+                            </label>
+                            <input type="text" class="form-control " id="inputname" required>
+                        </div>
+                        <div class="mb-3 w-75 mx-auto">
+                          <label for="inputkm" class="form-label">Quanti km dista la tua destinazione?</label>
+                          <input type="text" class="form-control " id="inputkm" required>
+                        </div>
+                        <div class="mb-3 w-75 mx-auto">
+                            <label for="inputage" class="form-label">Inserisci la tua età</label>
+                            <input type="text" class="form-control " id="inputage" required>
+                        </div>
+                        <div class="mb-3 w-75 mx-auto">
+                            <button type="submit" class="btn btn-primary">Calcola ora!</button>
+                        </div>
+                        <div class="d-none" id="ticket">
+                            <div class="card w-100">
+                                <div class="card-header fs-3 bg-dark text-bg-dark">
+                                    Biglietto n# <span id="number1-100"></span>
+                                </div>
+                                <div class="card-body fs-4 bg-dark">
+                                    <div class="card text-bg-dark">
+                                        <img src="img/Alta-velocità-Europa.jpg.webp" class="card-img opacity-25" alt="...">
+                                        <div class="card-img-overlay">
+                                            <h5 class="card-title fs-2">
+                                                <span>Passeggero: </span>
+                                                <span id="passenger">
+                                                    
+                                                </span>
+                                            </h5>
+                                            <p class="card-text">Costo biglietto: <span id="finalprice"></span></p>
+                                            <p class="card-text">
+                                                Carrozza n# <span id="number1-20"></span>
+                                            </p>
+                                            <p class="card-text fs-5">Questo biglietto ha validità 1 giorno</p>
+                                            <div class="btn btn-primary">Ordinalo adesso!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
             <h2>
-                Calcola il prezzo del tuo biglietto in autonomia!
+                Il tuo biglietto
             </h2>
-            <form id="form" class="mb-3">
-                <div class="mb-3">
-                  <label for="inputkm" class="form-label">Quanti km dista la tua destinazione?</label>
-                  <input type="text" class="form-control" id="inputkm" required>
-                </div>
-                <div class="mb-3">
-                    <label for="inputage" class="form-label">Inserisci la tua età</label>
-                    <input type="text" class="form-control" id="inputage" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Calcola ora!</button>
-            </form>
-                
-            <p>
-                Il costo del tuo biglietto è di: € <span id="finalprice" class="bg-info rounded d-inline-block p-1"> </span>
-            </p>
+            
+            
+            
             <h3>Informazioni utili:</h3>
             <ul>
                 <li>
                     La tariffa base è di €0,21 per km
                 </li>
                 <li>
-                    La tariffa minima dei biglietti è di € 10,00 
+                    La tariffa minima dei biglietti è di € 5,00 
                 </li>
                 <li>
                     Gli under 18 avranno uno sconto del 20% sui biglietti
