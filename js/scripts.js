@@ -7,12 +7,12 @@ form.addEventListener('submit', function(event){
     const inputKm = document.getElementById('inputkm').value;
     console.log(inputKm);
 
-    const inputAge = document.getElementById('inputage').value;
+    let inputAge = document.getElementById('inputage').value;
     console.log(inputAge);
 
-    const passenger = document.getElementById('inputname').value
-
-
+    const passenger = document.getElementById('inputname').value;
+    console.log(passenger);
+    
     let price = (inputKm * 0.21);
     console.log(price);
 
@@ -25,23 +25,23 @@ form.addEventListener('submit', function(event){
     console.log ('il num random 1-20 è: ',random1_20); // numero carrozza casuale
 
     const ticket = document.getElementById('ticket');
-    ticket.classList.remove('d-none')
+    ticket.classList.remove('d-none');
 
-    if (inputAge < 18){
-        let discount = ((inputKm * 0.21) * 20 / 100);
-        price = (price - discount);
+    if (inputAge == 'Minorenne'){
+        price = (price * 0.8);
         console.log('Il prezzo scontato per gli under 18 è:',price);
     }
 
-    else if (inputAge > 65){
-        let discount = ((inputKm * 0.21) * 40 / 100);
-        price = (price - discount);
+    else if (inputAge == 'Over65'){
+        price = (price * 0.6);
         console.log('Il prezzo scontato per i superiori di 65 anni è:',price);
     }
+
 
     if (price < 5){ // il prezzo non scende sotto i 5 euro
         price = (5);
     }
+
     document.getElementById('number1-20').innerHTML = random1_20;
     document.getElementById('number1-100').innerHTML = random1_100;
     document.getElementById('finalprice').innerHTML = (price).toFixed(2);

@@ -19,7 +19,7 @@
         </header>
         <div class="container">
             
-            <div class="card w-75 text-success-emphasis">
+            <div class="card w-75 text-success-emphasis mx-auto">
                 <div class="card-header">
                     Un'anteprima del prezzo del tuo biglietto in completa autonomia!
                 </div>
@@ -36,8 +36,12 @@
                           <input type="text" class="form-control" id="inputkm" required>
                         </div>
                         <div class="mb-3 w-75 mx-auto">
-                            <label for="inputage" class="form-label">Inserisci la tua età</label>
-                            <input type="text" class="form-control" id="inputage" required>
+                            <label for="inputage">In quale fascia di età rientri?</label>
+                            <select class="form-select" id="inputage">
+                                <option>Minorenne</option>
+                                <option selected >Maggiorenne</option>
+                                <option>Over65</option>
+                            </select>
                         </div>
                         <div class="mb-3 w-75 mx-auto">
                             <button type="submit" class="btn btn-secondary">Calcola ora!</button>
